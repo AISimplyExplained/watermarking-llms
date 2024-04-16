@@ -30,10 +30,10 @@ const config: DocsThemeConfig = {
     return (
       <>
         <meta property="og:url" content={url} />
-        <meta property="og:title" content={frontMatter.title || 'Nextra'} />
+        <meta property="og:title" content={frontMatter.title || 'AI Simply Explained'} />
         <meta
           property="og:description"
-          content={frontMatter.description || 'The next site builder'}
+          content={frontMatter.description || 'AI Simply Explained'}
         />
       </>
     )
