@@ -1,5 +1,7 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
+import { useRouter } from 'next/router'
+import { useConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
   logo: <span style={{ display: 'inline-block', verticalAlign: 'middle' }}>
@@ -18,6 +20,24 @@ const config: DocsThemeConfig = {
   project: {
     link: 'https://github.com/asmigiulati/WatermarkingLLMs',
   },
+  head: () => {
+    const { asPath, defaultLocale, locale } = useRouter()
+    const { frontMatter } = useConfig()
+    const url =
+      'https://my-app.com' +
+      (defaultLocale === locale ? asPath : `/${locale}${asPath}`)
+ 
+    return (
+      <>
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={frontMatter.title || 'Nextra'} />
+        <meta
+          property="og:description"
+          content={frontMatter.description || 'The next site builder'}
+        />
+      </>
+    )
+  }
     feedback: {
         useLink: () => 'https://tally.so/r/wzqP9k',
     },
