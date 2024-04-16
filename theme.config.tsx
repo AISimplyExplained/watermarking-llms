@@ -37,7 +37,7 @@ const config: DocsThemeConfig = {
         />
       </>
     )
-  }
+  },
     feedback: {
         useLink: () => 'https://tally.so/r/wzqP9k',
     },
