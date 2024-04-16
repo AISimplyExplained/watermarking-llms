@@ -1,0 +1,16 @@
+## Common Attacks on Watermarks
+1. **Text Insertion Attacks:** Attackers add extra tokens post-generation, potentially including 'red list' tokens which can alter the calculation of subsequent tokens.
+
+2. **Text Deletion:** Removing tokens might exclude 'green list' tokens—those expected to appear and altering the 'red list' computations of downstream tokens. This attack not only increases the cost for attackers but may also degrade text quality due to a narrower linguistic context.
+
+3. **Text Substitution:** Swapping one token for another may introduce a 'red list' token, affecting downstream tokens.
+
+4. **Generative Attacks:** For example, the "Emoji Attack" where the model is prompted to include an emoji after every token. The attacker can then remove these emojis, scrambling the 'red list' for following tokens.
+
+5. **Paraphrasing Attacks:** Either through manual human rephrasing or automated methods using a weaker public model, attackers can significantly alter the watermark's detection capacity.
+
+6. **Discreet Alterations:** Minor changes such as additional whitespaces or misspellings can affect the hash computation used in watermarking.
+
+7. **Tokenization Attacks:** Modifying text to alter sub-word tokenization can break the watermark integrity.
+
+8. **Homoglyph and Zero-Width Attacks:** Using visually similar or invisible unicode characters can disrupt tokenization and evade watermark detection.

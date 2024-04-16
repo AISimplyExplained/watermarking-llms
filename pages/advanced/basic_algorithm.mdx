@@ -1,0 +1,11 @@
+import CodeEditor from '../../components/editor'
+import { Callout } from 'nextra/components'
+
+
+# Basic Algorithm
+<Callout>
+    Observe the red and green list generation for the token 'brown'
+</Callout>
+<CodeEditor>
+    {"import numpy as np\nimport hashlib\nimport random\n# Define the model's vocabulary and the initial prompt\nvocabulary = ['the', 'quick', 'brown', 'fox', 'jumps', 'over', 'lazy', 'dog', 'runs', 'and']\nprompt = 'The quick brown'\n\ndef language_model(vocabulary):\n\t# Assign random logits to each word in the vocabulary\n\tlogits = np.random.randn(len(vocabulary))\n\t# Convert logits to probabilities using softmax\n\tprobabilities = np.exp(logits) / np.sum(np.exp(logits))\n\treturn dict(zip(vocabulary, probabilities))\n\ndef partition_vocabulary(vocabulary, hash_value):\n\trandom.seed(hash_value)\n\tshuffled_vocabulary = vocabulary[:]\n\trandom.shuffle(shuffled_vocabulary)\n\thalf_size = len(shuffled_vocabulary) // 2\n\tgreen_list = shuffled_vocabulary[:half_size]\n\tred_list = shuffled_vocabulary[half_size:]\n\treturn green_list, red_list\n\ndef simulate_watermarking(vocabulary, prompt):\n\ttoken = prompt.split()[-1]\n\t# Use the language model to get the probability vector\n\tprob_vector = language_model(vocabulary)\n\t# Hash the token and seed the random number generator\n\thash_value = hashlib.sha256(token.encode()).hexdigest()\n\t# Partition the vocabulary into red and green lists\n\tgreen_list, red_list = partition_vocabulary(vocabulary, hash_value)\n\t# Choose the next token from the green list with the highest probability\n\tnext_token = max(green_list, key=lambda word: prob_vector[word])\n\tprint(\"Probability vector:\", prob_vector)\n\tprint(\"Hash value:\", hash_value)\n\tprint(\"Red list:\", red_list)\n\tprint(\"Green list:\", green_list)\n\tprint(\"Next token:\", next_token)\n\tprint(\"The generated sequence: \", prompt+' '+ next_token)\nsimulate_watermarking(vocabulary, prompt)"}
+</CodeEditor>

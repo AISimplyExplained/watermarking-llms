@@ -1,0 +1,23 @@
+import { Callout } from 'nextra/components'
+
+# Some Problems
+
+## Low Entropy Sequences
+Low entropy sequences are strings of text or data that are very predictable and don't vary much, making them easy to guess what comes next.
+<Callout type="info">
+    Prompt is in blue, rest is generated text
+</Callout>
+
+For example,<br/> <span style={{ color: 'lightblue' }}>An apple a day,</span> keeps the doctor away.<br/>
+<span style={{ color: 'lightblue' }}>while (i < 10)</span> sum += i++;<br/>
+
+These examples illustrate sequences where the initial phrases set a clear expectation for what comes next, whether in idiomatic expressions or coding loops.
+## Some Challenges
+- Firstly, due to their predictable nature, both human authors and LLMs often produce the same or very similar endings to these texts. This makes it difficult to determine who or what created them.
+
+- Secondly, embedding a watermark in such text is problematic. Alterations to the text to include a watermark can disrupt its natural flow, leading to awkward or out-of-place words that lower the quality of the content.
+## The Simple Algorithm
+Now the hard red list rule algorithm that was discussed handles low entropy sequences by altering them which might not turn out so well!<br/><br/>
+Because Walt should almost always be followed by Disney in the content of talking about Disney. But disney might be removed because of being in the red list.<br/><br/>
+To solve this, a soft watermarking rule can be used which will work for only high  entropy text!  That means the LLM will use the green list for high entropy tokens when many other good tokens are available as substitutes.
+
