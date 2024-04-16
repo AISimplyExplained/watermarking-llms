@@ -26,7 +26,7 @@ const config: DocsThemeConfig = {
     link: 'https://discord.gg/QeUuKbNh',
   },
     gitTimestamp:'Last updated 15th April, 2024',
-  docsRepositoryBase: 'https://github.com/asmigiulati/Watermarking-LLMs',
+  docsRepositoryBase: 'https://github.com/asmigiulati/watermarking-llms',
   footer: {
     text: 'AI Simply Explained',
   }
