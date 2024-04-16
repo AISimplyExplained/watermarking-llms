@@ -18,7 +18,7 @@ const config: DocsThemeConfig = {
 </span>
 ,
   project: {
-    link: 'https://github.com/asmigiulati/WatermarkingLLMs',
+    link: 'https://github.com/asmigiulati/watermarking-llms',
   },
   head: () => {
     const { asPath, defaultLocale, locale } = useRouter()
