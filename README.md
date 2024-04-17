@@ -15,6 +15,6 @@ This section lists the essential research papers on LLM watermarking. For a more
 
 ## :raising_hand: Contributing
 
-We encourage contributions from the community! If you have suggestions, research papers, or educational materials related to LLM watermarking, please feel free to contribute. See our [contribution guidelines](link-to-contributing).
+We encourage contributions from the community! If you have suggestions, research papers, or educational materials related to LLM watermarking, please feel free to contribute.
 
 ---
