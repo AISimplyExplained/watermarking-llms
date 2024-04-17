@@ -1,6 +1,7 @@
 # Watermarking LLMs 101
 
 Welcome to the **Watermarking LLMs 101** repository! This repository serves as a central hub for educational resources, research papers, and community contributions focused on the study and application of watermarking techniques in Large Language Models (LLMs). Whether you're a student, researcher, or enthusiast, this repository is designed to provide you with comprehensive materials to deepen your understanding of LLM watermarking.
+Explore our interactive [Watermarking LLMs 101 Course](https://watermarking.aisimplyexplained.tech/) to engage with the material in a dynamic learning environment.
 
 ## :page_facing_up: Research Papers on Watermarking LLMs
 
